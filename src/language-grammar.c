@@ -375,14 +375,14 @@ int parseVariableList(token *tok, char **s)
 {
 	char var;
 	int i;
-	char input[11];
+	char input[12];
 	int c;
 
   if (matchVariable(tok, s))
   {
 		var = tok->c;
 
-		memset(input, 0, 11);
+		memset(input, 0, 12);
 
 			// Eat whitespace
 		do
@@ -550,7 +550,12 @@ int parseTerm(token *tok, char **s)
 			matchWhiteSpace(&testToken, s);
       if (parseTerm(tok, s))
 			{
-				tok->n = firstFactor * tok->n;
+				if (!tok->n)
+				{
+					errorSet(ERROR_DIVIDE_BY_ZERO);
+					return 0;
+				}
+				tok->n = firstFactor / tok->n;
         return 1;
 			}
 			return 0;

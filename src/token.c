@@ -27,11 +27,11 @@ void tokenFill(token *tok,
 							 char *value,
 							 int valueLength)
 {
-	char numberString[10];
+	char numberString[12];
 
 	if (!tok) return;
 
-	memset(numberString, 0, 10);
+	memset(numberString, 0, 12);
 
 	tokenClear(tok);
 
@@ -51,7 +51,7 @@ void tokenFill(token *tok,
 			tok->c = *value;
 			break;
 		case tokValueTypeNumber:
-			strncpy(numberString, value, valueLength);
+			strncpy(numberString, value, (valueLength > 11) ? 11 : valueLength);
 			tok->n = atoi(numberString);
 			break;
 	}

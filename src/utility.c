@@ -22,19 +22,26 @@
 
 char *itos(int n)
 {
-	static char s[10];
+	static char s[12];
 	int i, sign;
 
-	memset(s, 0, 10);
+	memset(s, 0, 12);
 
 	if ((sign = n) < 0)
+	{
 		n = -n;
+		if (n < 0)
+		{
+			++n;
+			n = -n;
+		}
+	}
 
 	i = 0;
 	do
 	{
 		s[i++] = n % 10 + '0';
-	} while ((n /= 10) > 0);
+	} while (((n /= 10) > 0) && (i < 10));
 
 	if (sign < 0)
 		s[i++] = '-';
