@@ -1,0 +1,9 @@
+In most GNU/POSIX development environments, issuing: make should build both the
+generic ub command that is executable in the host environment, and avrub which
+can be loaded into most any Atmel AVR 8bit uController.  
+
+NOTE:  In additional the the traditional GNU build tools (gcc, binutils, etc)
+       you will also need to install the avr-gcc compiler package.
+
+NOTE:  Depending on the particular model of AVR uController you are targeting,
+       you will need to adjust the COPTS in the makefile for that model.

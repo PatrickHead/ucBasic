@@ -1,0 +1,50 @@
+line ::= *NUMBER statement EOL
+statement ::= PRINT printlist
+              INPUT varlist
+              LET *VAR *EQUALS expression
+              GOTO expression
+              GOSUB expression
+              RETURN
+              IF expression *RELOP expression THEN statement
+              REM *STRING
+						  POKE expression *COMMA expression
+printlist ::= printitem
+              printitem *COLON
+              printitem *SEPARATOR printlist
+printitem ::= expression
+              *DOUBLEQUOTE *CHARACTERSTRING *DOUBLEQUOTE
+varlist ::= *VAR
+            *VAR *COMMA varlist
+exprlist ::= expression
+             expression *COMMA exprlist
+expression ::= unsignedexpr
+               *PLUS unsignedexpr
+               *MINUS unsignedexpr
+unsignedexpr ::= term
+                 term *PLUS unsignedexpr
+                 term *MINUS unsignedexpr
+term ::= factor
+         factor *TIMES term
+         factor *DIVIDEDBY term
+factor ::= *VAR
+           *NUMBER
+           *LEFTPAREN expression *RIGHTPAREN
+           function
+function ::= CALL *LEFTPAREN expression *RIGHTPAREN
+						 PEEK *LEFTPAREN expression *RIGHTPAREN
+*NUMBER ::= [0-9]+
+*VAR ::= [A-Z]
+*RELOP ::= <=|>=|<>|><|=|<|>
+*SEPARATOR ::= *COMMA|*SEMICOLON
+*COMMA ::= ,
+*COLON ::= :
+*SEMICOLON ::= ;
+*PLUS ::= +
+*MINUS ::= -
+*TIMES ::= *
+*DIVIDEDBY ::= /
+*LEFTPAREN ::= (
+*RIGHTPAREN ::= )
+*DOUBLEQUOTE ::= '
+*STRING ::= .*
+*CHARACTERSTRING :: ([^']|'')*

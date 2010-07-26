@@ -1,0 +1,12 @@
+command ::= CLEAR
+						run
+						list
+						SIZE
+						FREE
+run ::= RUN
+				RUN *LINENUMBER
+list ::= LIST
+				 LIST *LINENUMBER
+				 LIST *LINENUMBER *COMMA *LINENUMBER
+*LINENUMBER ::= [0-9]+
+*COMMA ::= ,

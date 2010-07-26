@@ -1,0 +1,9 @@
+As of 2010/07/26:
+1) Add useful commands and functions specific to AVR micro controllers
+2) Develop Arduino serial IO functions to stand in as stdio
+3) Annotate the source code, as currently there is almost none.
+4) Write a comprehensive design document
+5) Write a tutorial in the Crenshaw style?
+6) Write a user manual for the ucBasic language.
+7) Test, test, test ...
+8) Place project into GNU autoconf environment?
