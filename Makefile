@@ -123,3 +123,9 @@ clean:
 copy:
 	rm -rf ~/ws1/Develop/ucBasic/*
 	cp -r * ~/ws1/Develop/ucBasic
+
+commit:
+	git commit -a -C master
+
+push:
+	git push origin master

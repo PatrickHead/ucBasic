@@ -19,6 +19,10 @@
 #ifndef COMMAND_GRAMMAR_H
 #define COMMAND_GRAMMER_H
 
+	/*
+	 * Function prototypes
+	 */
+
 int parseCommand(token *tok, char **s);
 int parseRun(token *tok, char **s);
 int parseList(token *tok, char **s);

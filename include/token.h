@@ -19,6 +19,10 @@
 #ifndef TOKEN_H
 #define TOKEN_H
 
+	/*
+	 * Enumeration defining allowable values for tokenType type
+	 */
+
 typedef enum
 {
 		// Common tokens
@@ -71,6 +75,10 @@ typedef enum
 
 } tokenType;
 
+	/*
+	 * Enumeration defining allowable values for tokenValueType type
+	 */
+
 typedef enum
 {
 	tokValueTypeNone,
@@ -78,6 +86,10 @@ typedef enum
 	tokValueTypeCharacter,
 	tokValueTypeNumber
 } tokenValueType;
+
+	/*
+	 * Definition of a token that is systemic in entire application
+	 */
 
 typedef struct token
 {
@@ -90,6 +102,10 @@ typedef struct token
 		int n;
 	};
 } token;
+
+	/*
+	 * Function prototypes
+	 */
 
 void tokenFill(token *tok,
 							 tokenType type,

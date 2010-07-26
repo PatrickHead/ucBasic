@@ -19,6 +19,10 @@
 #ifndef LANGUAGE_GRAMMAR_H
 #define LANGUAGE_GRAMMER_H
 
+	/*
+	 * Function prototypes
+	 */
+
 int parseLine(token *tok, char **s);
 int parseStatement(token *tok, char **s);
 int parsePrintList(token *tok, char **s);

@@ -19,14 +19,30 @@
 #ifndef PROGRAM_H
 #define PROGRAM_H
 
+	/*
+	 * Macros defining global memory for program and gosub stack space
+	 *
+	 * NOTE:  This will need to be adjusted for each implementation
+	 * NOTE:  This should probably be autoconfigured somehow or a command line
+	 *        macro
+	 */
+
 #define PROGRAM_SIZEOF_DATA_SPACE	2048
 #define PROGRAM_SIZEOF_GOSUB_STACK 10
+
+	/*
+	 * Enumeration definining allowable values for programMode type
+	 */
 
 typedef enum
 {
 	progModeImmediate,
 	progModeStored
 } programMode;
+
+	/*
+	 * Function prototypes
+	 */
 
 char *programFindNextLineNumber(int ln);
 char *programFindLineNumber(int ln);

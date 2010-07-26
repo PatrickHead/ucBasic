@@ -19,6 +19,10 @@
 #ifndef LANGUAGE_LEXICON_H
 #define LANGUAGE_LEXICON_H
 
+	/*
+	 * Function prototypes
+	 */
+
 int matchComma(token *tok, char **s);
 int matchEOL(token *tok, char **s);
 int matchNumber(token *tok, char **s);

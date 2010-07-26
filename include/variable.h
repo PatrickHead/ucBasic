@@ -19,7 +19,19 @@
 #ifndef VARIABLE_H
 #define VARIABLE_H
 
+	/*
+	 * Macro defining total number of variables in language
+	 *
+	 * NOTE:  This can be adjusted downward, but would require an adjustment
+	 *        to the range checking in variable.c and in the matchVariable()
+	 *        function in language-lexicon.c
+	 */
+
 #define VARIABLE_SIZEOF_VARIABLE_ARRAY 26
+
+	/*
+	 * Function prototypes
+	 */
 
 void variableInit(void);
 void variableSet(char v, int n);

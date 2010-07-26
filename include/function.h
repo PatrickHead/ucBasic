@@ -19,6 +19,10 @@
 #ifndef FUNCTION_H
 #define FUNCTION_H
 
+	/*
+	 * Function prototypes
+	 */
+
 int functionCall(int value);
 int functionPeek(unsigned int address);
 

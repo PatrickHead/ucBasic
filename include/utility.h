@@ -19,6 +19,10 @@
 #ifndef UTILITY_H
 #define UTILITY_H
 
+	/*
+	 * Function prototypes
+	 */
+
 char *itos(int n);
 void reverse(char *s);
 

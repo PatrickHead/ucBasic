@@ -19,6 +19,10 @@
 #ifndef ERROR_H
 #define ERROR_H
 
+	/*
+	 * Macros defining error codes
+	 */
+
 #define ERROR_OK																		00
 #define ERROR_FUNCTION_ASSERTION_FAILURE						10
 #define ERROR_RELATIONAL_OPERATOR_ASSERTION_FAILURE 11
@@ -29,6 +33,10 @@
 #define ERROR_SYNTAX																29
 #define ERROR_OUT_OF_MEMORY													30
 #define ERROR_UNKNOWN_LINE_NUMBER										40
+
+	/*
+	 * Function prototypes
+	 */
 
 void errorSet(unsigned char code);
 unsigned char errorGet(void);

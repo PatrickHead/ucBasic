@@ -19,6 +19,10 @@
 #ifndef COMMAND_LEXICON_H
 #define COMMAND_LEXICON_H
 
+	/*
+	 * Function prototypes
+	 */
+
 int matchBye(token *tok, char **s);
 int matchClear(token *tok, char **s);
 int matchList(token *tok, char **s);
