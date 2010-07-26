@@ -4,9 +4,9 @@ ucBasic is a very small basic interpreter intended for use in micro controllers
 and micro controller based development boards.  This version is inspired by
 Tiny BASIC by Dennis Allison.  Although this version does deviate and extend
 Tiny BASIC, it syntactically maintains most of the same language elements.
-This implementation is a pure interpreter, omitting the using of any
-intermediate language virtual machine.  Also, this version is written in
-GNU/ANSI C entirely.
+This implementation is a pure interpreter, omitting the use of any intermediate
+language virtual machine.  Also, this version is written in GNU/ANSI C
+entirely.
 
 The interpreter design uses many of the concepts developed and documented in
 tutorial form by Jack W. Crenshaw PHD.  ucBasic is a pure recursive descent
