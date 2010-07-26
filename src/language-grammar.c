@@ -83,7 +83,9 @@ int parseLine(token *tok, char **s)
 		}
 	}
 
-	errorSet(ERROR_SYNTAX);
+	if (errorGet() == ERROR_OK)
+		errorSet(ERROR_SYNTAX);
+
   return 0;
 }
 
@@ -119,7 +121,7 @@ int parseStatement(token *tok, char **s)
 			if (parsePrintList(tok, s))
 				return 1;
 		}
-		errorSet(ERROR_MISSING_WHITESPACE);
+		else errorSet(ERROR_MISSING_WHITESPACE);
 		return 0;
 	}
 
@@ -151,9 +153,12 @@ int parseStatement(token *tok, char **s)
 						return 1;
 					}
 				}
+				else errorSet(ERROR_MISSING_ASSIGNMENT);
 			}
+			else errorSet(ERROR_MISSING_VARIABLE);
 		}
-		errorSet(ERROR_MISSING_WHITESPACE);
+		else errorSet(ERROR_MISSING_WHITESPACE);
+
 		return 0;
 	}
 
@@ -451,15 +456,14 @@ int parseExpressionList(token *tok, char **s)
 
 int parseExpression(token *tok, char **s)
 {
-  if (parseUnsignedExpression(tok, s))
-    return 1;
+  if (parseUnsignedExpression(tok, s)) return 1;
+	else if (errorGet()) return 0;
 
   if (matchPlus(tok, s))
 	{
 		matchWhiteSpace(&testToken, s);
-    if (parseUnsignedExpression(tok, s))
-      return 1;
-		errorSet(ERROR_INVALID_EXPRESSION);
+    if (parseUnsignedExpression(tok, s)) return 1;
+		else errorSet(ERROR_INVALID_EXPRESSION);
 		return 0;
 	}
 
@@ -471,7 +475,8 @@ int parseExpression(token *tok, char **s)
 			tok->n *= -1;
       return 1;
 		}
-		errorSet(ERROR_INVALID_EXPRESSION);
+		else errorSet(ERROR_INVALID_EXPRESSION);
+
 		return 0;
 	}
 
@@ -584,9 +589,8 @@ int parseFactor(token *tok, char **s)
     if (parseExpression(tok, s))
 		{
 			matchWhiteSpace(&testToken, s);
-      if (matchRightParenthesis(tok, s))
-        return 1;
-			errorSet(ERROR_UNMATCHED_PARENTHESES);
+      if (matchRightParenthesis(&testToken, s)) return 1;
+			else errorSet(ERROR_UNMATCHED_PARENTHESES);
 		}
 		return 0;
 	}

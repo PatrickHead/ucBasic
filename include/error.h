@@ -30,7 +30,9 @@
 #define ERROR_UNMATCHED_PARENTHESES									21
 #define ERROR_MALFORMED_LINE												22
 #define ERROR_MISSING_WHITESPACE										23
-#define ERROR_DIVIDE_BY_ZERO												24
+#define ERROR_MISSING_ASSIGNMENT										24
+#define ERROR_MISSING_VARIABLE											25
+#define ERROR_DIVIDE_BY_ZERO												28
 #define ERROR_SYNTAX																29
 #define ERROR_OUT_OF_MEMORY													30
 #define ERROR_UNKNOWN_LINE_NUMBER										40

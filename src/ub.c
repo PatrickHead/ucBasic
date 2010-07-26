@@ -122,8 +122,12 @@ char *tbError(unsigned char code)
 			return "(22) MALFORMED LINE";
 		case ERROR_MISSING_WHITESPACE:
 			return "(23) MISSING WHITESPACE";
+		case ERROR_MISSING_ASSIGNMENT:
+			return "(24) MISSING ASSIGNMENT";
+		case ERROR_MISSING_VARIABLE:
+			return "(25) MISSING VARIABLE";
 		case ERROR_DIVIDE_BY_ZERO:
-			return "(24) DIVIDE BY ZERO";
+			return "(28) DIVIDE BY ZERO";
 		case ERROR_SYNTAX:
 			return "(29) SYNTAX";
 		case ERROR_OUT_OF_MEMORY:
