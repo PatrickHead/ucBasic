@@ -1,7 +1,7 @@
 ucBasic
 
 ucBasic is a very small basic interpreter intended for use in micro controllers
-and micro controllers based development boards.  This version is inspired by
+and micro controller based development boards.  This version is inspired by
 Tiny BASIC by Dennis Allison.  Although this version does deviate and extend
 Tiny BASIC, it syntactically maintains most of the same language elements.
 This implementation is a pure interpreter, omitting the using of any
