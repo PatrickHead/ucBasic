@@ -1,6 +1,6 @@
-ucBasic
+#ucBasic
 
-ucBasic is a very small basic interpreter intended for use in micro controllers
+@b ucBasic is a very small basic interpreter intended for use in micro controllers
 and micro controller based development boards.  This version is inspired by
 Tiny BASIC by Dennis Allison.  Although this version does deviate and extend
 Tiny BASIC, it syntactically maintains most of the same language elements.
